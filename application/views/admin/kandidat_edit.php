@@ -5,7 +5,7 @@
             </div>
             <!-- /.box-header -->
         <div class="box-body">
-                <?= form_open_multipart('admin/kandidat/update');?>
+                <?= form_open_multipart('admin/kandidat/update'); ?>
                 <input type="hidden" name="id" value="<?= $row->id ?>">
                 <div class="row">
                     <div class="col-md-3">
