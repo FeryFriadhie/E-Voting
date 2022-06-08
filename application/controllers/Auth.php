@@ -8,6 +8,7 @@ class Auth extends CI_Controller {
     public function index ()
     {
         $data ['title'] = 'Auth';
+        $data ['kelas'] = $this->db->get('kelas')->result();
         $this->load->view('templates/header', $data);
         $this->load->view('auth', $data);
         $this->load->view('templates/footer');
@@ -27,7 +28,7 @@ class Auth extends CI_Controller {
             $this->index();
         } else {
             $data = [
-                'id_kelas' => $this->input->post('kelas', true),
+                'id_kelas' => $this->input->post('id_kelas', true),
                 'nama' => $this->input->post('nama', true),
                 'email' => $this->input->post('email', true),
                 'password' => password_hash($this->input->post('password', true), PASSWORD_DEFAULT),

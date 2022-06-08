@@ -42,12 +42,11 @@
             <?= form_error('password', '<span class="text-danger small pl-3">', '</span>'); ?>
           </div>
           <div class="form-group">
-            <label for="kelas" class="text-secondary">Kelas *</label>
-            <select name="kelas" id="kelas" class="form-control">
-              <option value="">X AKL 1</option>
-              <option value="">X AKL 2</option>
-              <option value="">X AKL 3</option>
-              <option value="">X AKL 4</option>
+            <label for="id_kelas" class="text-secondary">Kelas *</label>
+            <select name="id_kelas" id="id_kelas" class="form-control">
+              <?php foreach ($kelas as $kls) : ?>
+                <option value="<?= $kls->id ?>"><?= $kls->nama ?></option>
+              <?php endforeach; ?>
             </select>
           </div>
           <button type="submit" class="btn btn-primary">Registrasi akun</button>
