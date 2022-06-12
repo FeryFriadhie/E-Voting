@@ -57,7 +57,13 @@ class Auth extends CI_Controller {
                     $this->session->set_userdata($data_session);
                     redirect('admin/dashboard');
                 } else { // siswa
-                    echo "siswa";
+                    $data_session = [
+                        'id' => $cek_email->id,
+                        'nama' => $cek_email->nama,
+                        'level' => $cek_email->level,
+                    ];
+                    $this->session->set_userdata($data_session);
+                    redirect('home');
                 }
             } else { // jika tidak ada
             echo "<script>

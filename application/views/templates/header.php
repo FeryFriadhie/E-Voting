@@ -9,6 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Scada&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="<?= base_url('assets/'); ?>css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/'); ?>css/style.css">
+    <style>
+      .img-circle {
+        display: block;
+        border-radius: 50%;
+        margin: 20px auto;
+        padding: 30px;
+      }
+    </style>
   </head>
   <body>
 
@@ -22,24 +30,25 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link nav-active active" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link nav-active" href="#">Voting</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Fery Friadhie 
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Logout</a>
-        </div>
-      </li>
-    </ul>
-  </div>
+  <?php if($this->session->userdata('id') != NULL) : ?>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link nav-active active" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-active" href="#sec2">Voting</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <?= $this->session->userdata('nama'); ?> 
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="<?= site_url('auth/logout'); ?>">Logout</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  <?php endif; ?>
   </div>
 </nav>

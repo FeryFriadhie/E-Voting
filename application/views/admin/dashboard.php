@@ -4,14 +4,14 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>150</h3>
+              <h3><?= $total_user ?></h3>
 
               <p>Total Users</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-add"></i>
             </div>
-            <a href="#" class="small-box-footer">Klik Untuk Info Selanjutnya <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?= site_url('admin/user'); ?>" class="small-box-footer">Klik Untuk Info Selanjutnya <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -19,14 +19,14 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>53</h3>
+              <h3><?= $total_suara ?></h3>
 
               <p>Total Pemilih</p>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
             </div>
-            <a href="#" class="small-box-footer">Klik Untuk Info Selanjutnya <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?= site_url('admin/suara'); ?>" class="small-box-footer">Klik Untuk Info Selanjutnya <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
     </div>
@@ -39,7 +39,7 @@
           </div>
         </div>
       </div>
-    <canvas id="chartHasilPerolehanSuara" width="400" height="400"></canvas>
+    <canvas id="chartHasilPerolehanSuara" height="200"></canvas>
 </section>
 
 <script>
@@ -50,7 +50,14 @@ const myChart = new Chart(ctx, {
         labels: ['Calon No.1 OSIS', 'Calon No.2 OSIS', 'Calon No.3 OSIS', 'Calon No.1 MPK', 'Calon No.2 MPK', 'Calon No.3 MPK'],
         datasets: [{
             label: '# Hasil Perolehan Suara',
-            data: [12, 19, 25, 29, 33, 14],
+            data: [
+              <?= $kandidat1osis ?>,
+              <?= $kandidat2osis ?>,
+              <?= $kandidat3osis ?>,
+              <?= $kandidat1mpk ?>,
+              <?= $kandidat1mpk ?>,
+              <?= $kandidat1mpk ?>,
+            ],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',

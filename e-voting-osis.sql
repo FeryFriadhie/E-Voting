@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2022 at 01:03 PM
+-- Generation Time: Jun 11, 2022 at 02:16 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -24,6 +24,31 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `kandidat`
+--
+
+CREATE TABLE `kandidat` (
+  `id` int(11) NOT NULL,
+  `nama_kandidat` varchar(100) NOT NULL,
+  `nama_calon` varchar(100) NOT NULL,
+  `foto` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kandidat`
+--
+
+INSERT INTO `kandidat` (`id`, `nama_kandidat`, `nama_calon`, `foto`) VALUES
+(1, 'Calon No.1 OSIS', 'Sovi Novitasari  XI RPL & Nela XI OTKP 3', 'c24.png'),
+(2, 'Calon No.2 OSIS', '-', 'c3.png'),
+(3, 'Calon No.3 OSIS', '-', 'c11.png'),
+(4, 'Calon No.1 MPK', '-', 'c31.png'),
+(5, 'Calon No.2 MPK', '-', 'default.png'),
+(6, 'Calon No.3 MPK', '-', 'default.png');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `kelas`
 --
 
@@ -37,9 +62,51 @@ CREATE TABLE `kelas` (
 --
 
 INSERT INTO `kelas` (`id`, `nama`) VALUES
-(20, 'X AKL 2'),
-(32, 'XI MM'),
-(33, 'X BDP');
+(20, 'X AKL 1'),
+(32, 'X AKL 2'),
+(37, 'X AKL 3'),
+(38, 'X AKL 4'),
+(39, 'X MPLB 1'),
+(40, 'X MPLB 2'),
+(41, 'X MPLB 3'),
+(42, 'X PM 1'),
+(43, 'X PM 2'),
+(44, 'X PM 3'),
+(45, 'X HTL 1'),
+(46, 'X HTL 2'),
+(47, 'X KLN 1'),
+(48, 'X KLN 2'),
+(49, 'X DKV'),
+(50, 'X PPLG'),
+(51, 'XI AKL 1'),
+(52, 'XI AKL 2'),
+(53, 'XI AKL 3'),
+(54, 'XI AKL 4'),
+(55, 'XI MPLB 1'),
+(56, 'XI MPLB 2'),
+(57, 'XI MPLB 3'),
+(58, 'XI PM 1'),
+(59, 'XI PM 2'),
+(60, 'XI PM 3'),
+(61, 'XI HTL 1'),
+(62, 'XI HTL 2 '),
+(63, 'XI KLN 1'),
+(64, 'XI KLN 2'),
+(65, 'XI DKV'),
+(66, 'XI PPLG');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `suara`
+--
+
+CREATE TABLE `suara` (
+  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `nama_kandidat` varchar(100) NOT NULL,
+  `created` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -63,18 +130,52 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `id_kelas`, `nama`, `email`, `password`, `level`, `status`) VALUES
 (1, 0, 'Admin Voting', 'admin@gmail.com', '$2y$10$PVP48S2f7nmkrvhBNQSHLOT6ZdAcP5DxOWDboUcZVnX5t49Zsp80K', 'admin', 0),
-(2, 0, 'Farel Fajria Maula', 'Farel@gmail.com', '$2y$10$xpJtkUPNSTdeFYs.QHanr.79h3uWxXEhqNnnqxp/3OT7TAAB0E7Ie', 'siswa', 0),
-(5, 0, 'Raehan Dzulfikri', 'raehan@gmail.com', '$2y$10$PE1MFbWYy/ZMk36eA0Q3Xuarvn2oHvtLZOBZswWJxCmE11eZ5Yb8i', 'siswa', 0),
-(6, 0, 'Harisma', 'harisma@gmail.com', '$2y$10$QgOe.fVdILoT31RW49eJGefC1kB/CDVPUWLZwR7WaD/p7ERnuDNYi', 'siswa', 0);
+(7, 66, 'Fery', 'feryfriadhie@gmail.com', '$2y$10$bsoAEGG3scWt7hxshwADueVBgEMUkfLL3zOccUsDdb9UN/gT/PwxW', 'siswa', 1),
+(8, 64, 'Ghaza Maulana Rachman', 'ghaza@gmail.com', '$2y$10$rkjSqYCqTwro5YA37KCPEOZ3xDP8s0cXzorfpwzG9MCD9r1kPL3GC', 'siswa', 2),
+(9, 20, 'Aldita', 'aldita@gmail.com', '$2y$10$1uzr6WPlnhwCTrj5D9r20OT5m4qKjbsoZbmv72LGpQMwqU1YWaaMq', 'siswa', 0),
+(10, 20, 'ii', 'ii@gmail.com', '$2y$10$XTejyiteBETfulcri8WUxu0HvTAz37n5/.kyqKHSEL5NPBVxRfJC6', 'siswa', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `visimisi`
+--
+
+CREATE TABLE `visimisi` (
+  `id` int(11) NOT NULL,
+  `id_kandidat` int(11) NOT NULL,
+  `visi` text NOT NULL,
+  `misi` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `visimisi`
+--
+
+INSERT INTO `visimisi` (`id`, `id_kandidat`, `visi`, `misi`) VALUES
+(1, 4, '<p>Memajukan pendidikan di sekolah </p>\r\n', '<p>1. Belajar dengan giat</p>\r\n\r\n<p>2. Disiplin </p>\r\n'),
+(4, 1, '<p>bisaa</p>\r\n', '<p>yakin</p>\r\n');
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `kandidat`
+--
+ALTER TABLE `kandidat`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `kelas`
 --
 ALTER TABLE `kelas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `suara`
+--
+ALTER TABLE `suara`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -84,20 +185,44 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`id`) USING BTREE;
 
 --
+-- Indexes for table `visimisi`
+--
+ALTER TABLE `visimisi`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `kandidat`
+--
+ALTER TABLE `kandidat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+
+--
+-- AUTO_INCREMENT for table `suara`
+--
+ALTER TABLE `suara`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `visimisi`
+--
+ALTER TABLE `visimisi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-6">
         <h2 class="display-4 text-primary mt-5 h2-sec1">Selamat Datang <br> E-Voting SMKN 1 Ciamis</h2>
-        <p class="text-secondary p-sec1">Silahkan gunakan hak suara kalian untuk <br> menentukan Ketua dan Wakil Ketua OSIS baru </p>
+        <p class="text-secondary p-sec1">Silahkan gunakan hak suara kamu untuk <br> menentukan Ketua dan Wakil Ketua OSIS MPK </p>
         <div class="a-sec1">
         <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modalLogin">Sign in</a>
         <a href="#sec2" class="btn btn-secondary">Sign up</a>
@@ -60,8 +60,8 @@
 <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Form Login</h5>
+      <div class="modal-header bg-primary">
+        <h5 class="modal-title text-white" id="exampleModalLongTitle">Form Login</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
