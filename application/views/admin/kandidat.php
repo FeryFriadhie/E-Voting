@@ -26,10 +26,10 @@
                         <td><?= $row->nama_kandidat ?></td>
                         <td><?= $row->nama_calon ?></td>
                         <td>
-                            <img src="<?= base_url('assets/image/' .$row->foto); ?>" width="150px">
+                            <img src="<?= base_url('assets/image/'.$row->foto); ?>" width="150px">
                         </td>
                         <td>
-                            <a href="<?= site_url('admin/kandidat/edit/' . $row->id); ?>" 
+                            <a href="<?= site_url('admin/kandidat/edit/'. $row->id); ?>" 
                             class="btn btn-sm btn-success">
                             <i class="fa fa-pencil-square-o"></i></a>
                         </td>

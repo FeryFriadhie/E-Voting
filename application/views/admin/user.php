@@ -30,10 +30,8 @@
                         <td><?= $row->nama_user ?></td>
                         <td><?= $row->email ?></td>
                         <td>
-                            <?php if($row->status == 2 ) {?>
-                            <button type="button" class="btn btn-info" ><i class="fa fa-check"></i> Sudah Memilih keduanya</button>    
-                            <?php } else if($row->status == 1 ) { ?>
-                                <button type="button" class="btn btn-warning" ><i class="fa fa-warning"></i> Baru Memilih satu</button>    
+                            <?php if($row->status == 1 ) {?>
+                            <button type="button" class="btn btn-info" ><i class="fa fa-check"></i> Sudah Memilih</button>                             
                             <?php } else { ?>
                                 <button type="button" class="btn btn-danger" ><i class="fa fa-pencil"></i> Belum Memilih</button>
                             <?php } ?>

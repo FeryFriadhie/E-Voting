@@ -14,7 +14,7 @@ class HomeModel extends CI_Model
 
     public function update_status_user()
     {
-        $data = ['status' => 2];
+        $data = ['status' => 1];
         $this->db->where('id', $this->input->post('id_user'));
         $this->db->update('user', $data);
     }

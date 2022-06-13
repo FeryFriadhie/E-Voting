@@ -23,9 +23,6 @@
   <nav class="navbar navbar-expand-lg navbar-light 
   shadow-sm p-3 mb-5 bg-white rounded fixed-top">
   <div class="container">
-  <a class="navbar-brand" href="#">
-  <img src="<?= base_url('assets/'); ?>image/smkn1ciamis.png" width="40" height="55" alt="logo-smkn1ciamis">
-  </a>
   <a class="navbar-brand text-primary" href="#"><h3><b>E-VOTING</b></h3></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

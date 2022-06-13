@@ -35,8 +35,6 @@ class Home extends CI_Controller
         $this->HomeModel->update_status_user();
         if($this->db->affected_rows() > 0) {
             $result = ['success' => true];
-        }else if($this->db->affected_rows() == 1) {
-            $result = ['success2' => true];
         }else{
             $result = ['success' => false];
         }

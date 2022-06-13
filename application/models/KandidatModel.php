@@ -10,17 +10,15 @@ class KandidatModel extends CI_Model
             $config['upload_path']          = './assets/image/';
             $config['allowed_types']        = 'gif|jpg|png|jpeg|svg';
             $config['max_size']             = 2048; //2mb
-            $config['max_width']            = 1280;
-            $config['max_height']           = 720;
 
             $this->load->library('upload', $config);
-            if ( ! $this->upload->do_upload('foto'))
+            if (!$this->upload->do_upload('foto'))
             {
                 echo  $this->upload->display_errors();
             } else {
                 $CekFotoLama = $this->db->get_where('kandidat', ['id' => $this->input->post('id')])->row();
                 if($CekFotoLama->foto != 'default.png') {
-                    unlink('assets/img/' . $CekFotoLama->foto);
+                    unlink('assets/image/'. $CekFotoLama->foto);
                 }
                     $FotoBaru = $this->upload->data('file_name');
                     $kandidat ['foto'] = $FotoBaru;

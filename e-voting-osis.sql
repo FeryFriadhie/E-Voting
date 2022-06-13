@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2022 at 02:16 AM
+-- Generation Time: Jun 13, 2022 at 07:00 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -31,7 +31,7 @@ CREATE TABLE `kandidat` (
   `id` int(11) NOT NULL,
   `nama_kandidat` varchar(100) NOT NULL,
   `nama_calon` varchar(100) NOT NULL,
-  `foto` varchar(100) NOT NULL
+  `foto` varchar(100) NOT NULL DEFAULT 'default.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -39,12 +39,9 @@ CREATE TABLE `kandidat` (
 --
 
 INSERT INTO `kandidat` (`id`, `nama_kandidat`, `nama_calon`, `foto`) VALUES
-(1, 'Calon No.1 OSIS', 'Sovi Novitasari  XI RPL & Nela XI OTKP 3', 'c24.png'),
-(2, 'Calon No.2 OSIS', '-', 'c3.png'),
-(3, 'Calon No.3 OSIS', '-', 'c11.png'),
-(4, 'Calon No.1 MPK', '-', 'c31.png'),
-(5, 'Calon No.2 MPK', '-', 'default.png'),
-(6, 'Calon No.3 MPK', '-', 'default.png');
+(1, 'Calon No.1 OSIS', 'Sovi Novitasari  Cahyani XI BDP 1 & Nela Mustika Sari XI OTKP 3', 'c2.png'),
+(2, 'Calon No.2 OSIS', 'Fery Friadhie XI RPL & Anisa Sri Syabaniah XI AKL 4', 'c1.png'),
+(3, 'Calon No.3 OSIS', 'Ghaza Maulana Rachman XI TB 2 & Sifa Alia XI BDP 2', 'c3.png');
 
 -- --------------------------------------------------------
 
@@ -108,6 +105,13 @@ CREATE TABLE `suara` (
   `created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `suara`
+--
+
+INSERT INTO `suara` (`id`, `id_user`, `nama_kandidat`, `created`) VALUES
+(17, 8, 'Calon No.1 OSIS', '2022-06-13 16:39:29');
+
 -- --------------------------------------------------------
 
 --
@@ -130,8 +134,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `id_kelas`, `nama`, `email`, `password`, `level`, `status`) VALUES
 (1, 0, 'Admin Voting', 'admin@gmail.com', '$2y$10$PVP48S2f7nmkrvhBNQSHLOT6ZdAcP5DxOWDboUcZVnX5t49Zsp80K', 'admin', 0),
-(7, 66, 'Fery', 'feryfriadhie@gmail.com', '$2y$10$bsoAEGG3scWt7hxshwADueVBgEMUkfLL3zOccUsDdb9UN/gT/PwxW', 'siswa', 1),
-(8, 64, 'Ghaza Maulana Rachman', 'ghaza@gmail.com', '$2y$10$rkjSqYCqTwro5YA37KCPEOZ3xDP8s0cXzorfpwzG9MCD9r1kPL3GC', 'siswa', 2),
+(7, 66, 'Fery', 'feryfriadhie@gmail.com', '$2y$10$bsoAEGG3scWt7hxshwADueVBgEMUkfLL3zOccUsDdb9UN/gT/PwxW', 'siswa', 0),
+(8, 64, 'Ghaza Maulana Rachman', 'ghaza@gmail.com', '$2y$10$rkjSqYCqTwro5YA37KCPEOZ3xDP8s0cXzorfpwzG9MCD9r1kPL3GC', 'siswa', 1),
 (9, 20, 'Aldita', 'aldita@gmail.com', '$2y$10$1uzr6WPlnhwCTrj5D9r20OT5m4qKjbsoZbmv72LGpQMwqU1YWaaMq', 'siswa', 0),
 (10, 20, 'ii', 'ii@gmail.com', '$2y$10$XTejyiteBETfulcri8WUxu0HvTAz37n5/.kyqKHSEL5NPBVxRfJC6', 'siswa', 0);
 
@@ -154,7 +158,9 @@ CREATE TABLE `visimisi` (
 
 INSERT INTO `visimisi` (`id`, `id_kandidat`, `visi`, `misi`) VALUES
 (1, 4, '<p>Memajukan pendidikan di sekolah </p>\r\n', '<p>1. Belajar dengan giat</p>\r\n\r\n<p>2. Disiplin </p>\r\n'),
-(4, 1, '<p>bisaa</p>\r\n', '<p>yakin</p>\r\n');
+(4, 1, '<p>bisaa</p>\r\n', '<p>yakin</p>\r\n'),
+(5, 2, '<p>Menjadikan...</p>\r\n', '<p>1. Taqwa</p>\r\n'),
+(6, 3, '<p>NGABRET</p>\r\n', '<p>1. Taqwa kepada Tuhan Yang Maha Esa </p>\r\n');
 
 --
 -- Indexes for dumped tables
@@ -210,7 +216,7 @@ ALTER TABLE `kelas`
 -- AUTO_INCREMENT for table `suara`
 --
 ALTER TABLE `suara`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -222,7 +228,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `visimisi`
 --
 ALTER TABLE `visimisi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

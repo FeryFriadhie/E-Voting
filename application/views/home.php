@@ -1,12 +1,9 @@
 <section class="sec1" id="sec1">
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-12">
         <h2 class="display-4 text-primary mt-5 h2-sec1">Hallo <?= $this->session->userdata('nama'); ?><br></h2>
         <h5 class="text-secondary p-sec1">Ayo! gunakan hak suara kamu untuk <br> menentukan Ketua dan Wakil Ketua OSIS & MPK</h5>
-      </div>
-      <div class="col-md-6">
-        <img src="<?= base_url('assets/'); ?>image/hero1.png" alt="tampilan" class="img-fluid">
       </div>
     </div>
   </div>
@@ -17,14 +14,14 @@
   <div class="row">
     <div class="col-md-12">
     <h2 class="display-4 text-primary mt-5 h2-sec2 text-center">Voting</h2>
-    <h4 class="display-5 text-secondary mt-3  h4-sec2 text-center mb-5">Calon Ketua & Wakil Ketua OSIS MPK</h4>
+    <h4 class="display-5 text-secondary mt-3  h4-sec2 text-center mb-5">Calon Ketua & Wakil Ketua OSIS</h4>
     </div>
   </div>
 
     <div class="row">
         <?php foreach ($kandidat as $knd ) : ?>    
         <div class="col-md-4">
-            <div class="card mb-5" style="width: 18rem;">
+            <div class="card mb-5">
                 <img src="<?= base_url('assets/image/' . $knd->foto); ?> " class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-center text-primary font-weight-bold"><?= $knd->nama_kandidat ?></h5>
@@ -38,7 +35,6 @@
                             <?php else : ?>
                               <button href="#" class="btn btn-success btn-xs ml-3" disabled>Pilih <?= $knd->nama_kandidat ?></button>
                         <?php endif; ?>
-                        
                     </div>
                 </div>
             </div>

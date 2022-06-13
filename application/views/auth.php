@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-6">
         <h2 class="display-4 text-primary mt-5 h2-sec1">Selamat Datang <br> E-Voting SMKN 1 Ciamis</h2>
-        <p class="text-secondary p-sec1">Silahkan gunakan hak suara kamu untuk <br> menentukan Ketua dan Wakil Ketua OSIS MPK </p>
+        <p class="text-secondary p-sec1">Silahkan gunakan hak suara kamu untuk <br> menentukan Ketua dan Wakil Ketua OSIS </p>
         <div class="a-sec1">
         <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modalLogin">Sign in</a>
         <a href="#sec2" class="btn btn-secondary">Sign up</a>
