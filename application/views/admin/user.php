@@ -38,12 +38,16 @@
                         </td>
                         <td><?= $row->level ?></td>
                         <td>
-                            <a href="<?= site_url('admin/user/edit/' . $row->id_user); ?>" 
-                            class="btn btn-sm btn-success">
-                            <i class="fa fa-pencil-square-o"></i></a>
-                            <a onclick = "return confirm('Yakin hapus?')" href="<?= site_url('admin/user/hapus/' . $row->id_user); ?>" 
-                            class="btn btn-sm btn-danger">
-                            <i class="fa fa-trash"></i></a>
+                            <div class="dropdown">
+                                <a id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-ellipsis-v"></i></a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item btn btn-sm btn-success" href="<?= site_url('admin/user/edit/' . $row->id_user); ?>" >
+                                    <i class="fa fa-pencil-square-o"></i></a>
+                                    <a class="dropdown-item btn btn-sm btn-danger" onclick = "return confirm('Yakin hapus?')" href="<?= site_url('admin/user/hapus/' . $row->id_user); ?>" >
+                                    <i class="fa fa-trash"></i></a>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 <?php endforeach; ?>

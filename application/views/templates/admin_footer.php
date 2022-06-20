@@ -1,7 +1,6 @@
 </div>
-<footer class="main-footer">
-    <strong>Copyright &copy; 2022 <a href="https://adminlte.io">Fery Friadhie</a>.</strong> SMKN 1 Ciamis
-  </footer>
+<footer class="main-footer"><strong>Copyright &copy; 2022 <a href="https://feryfriadhie.github.io/">Tim E-Voting</a>.</strong> SMKN 1 Ciamis
+</footer>
 
 <!-- Bootstrap 3.3.7 -->
 <script src="<?= base_url('assets/'); ?>bower_components/bootstrap/dist/js/bootstrap.min.js"></script>

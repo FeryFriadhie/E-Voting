@@ -27,15 +27,19 @@
                         <td><?= $row->nama_kandidat ?></td>
                         <td><?= $row->visi ?></td>
                         <td><?= $row->misi ?></td>
-
-                        <td>
-                            <a href="<?= site_url('admin/visi_misi/edit/' . $row->id_visimisi); ?>" 
-                            class="btn btn-sm btn-success">
-                            <i class="fa fa-pencil-square-o"></i></a>
-                            <a href="<?= site_url('admin/visi_misi/hapus/' . $row->id_visimisi); ?>" 
-                            class="btn btn-sm btn-danger" onclick="return confirm ('Yakin Hapus?') ">
-                            <i class="fa fa-trash-o"></i></a>
-                        </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-ellipsis-v"></i></a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item btn btn-sm btn-success" href="<?= site_url('admin/visi_misi/edit/' . $row->id_visimisi); ?>">
+                                                <i class="fa fa-pencil-square-o"></i></a>
+                                                <a class="dropdown-item btn btn-sm btn-danger" href="<?= site_url('admin/visi_misi/hapus/' . $row->id_visimisi); ?>" 
+                                                onclick="return confirm ('Yakin Hapus?') ">
+                                                <i class="fa fa-trash-o"></i></a>
+                                        </div>
+                                    </div>
+                                </td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>

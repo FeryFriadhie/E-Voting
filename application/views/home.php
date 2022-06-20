@@ -1,9 +1,13 @@
 <section class="sec1" id="sec1">
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        <h2 class="display-4 text-primary mt-5 h2-sec1">Hallo <?= $this->session->userdata('nama'); ?><br></h2>
-        <h5 class="text-secondary p-sec1">Ayo! gunakan hak suara kamu untuk <br> menentukan Ketua dan Wakil Ketua OSIS & MPK</h5>
+      <div class="col-md-6">
+        <h3 class="display-4 text-primary mt-5 h2-sec1">Hallo <?= $this->session->userdata('nama'); ?><br></h3>
+        <h5 class="text-secondary p-sec1">Ayo! gunakan hak suara kamu untuk <br> menentukan Ketua dan Wakil Ketua OSIS</h5>
+      </div>
+      <div class="col-md-6">
+        <h3></h3>
+        <img src="<?= base_url('assets/'); ?>image/Voting.png" alt="voting" class="img-fluid">
       </div>
     </div>
   </div>

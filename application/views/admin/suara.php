@@ -14,26 +14,26 @@
                         <th>Nama User</th>
                         <th>Nama Kandidat</th>
                         <th>Created</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                <?php $no = 1;
-                foreach($rows as $row) : 
-                ?>
-                    <tr>
-                        <td><?= $no++ ?></td>
-                        <td><?= $row->nama_user ?></td>
-                        <td><?= $row->nama_kandidat ?></td>
-                        <td><?= $row->created ?></td>
-
-                        <td>
-                            <a href="<?= site_url('admin/suara/hapus/' . $row->id_suara); ?>" 
-                            class="btn btn-sm btn-danger" onclick="return confirm ('Yakin Hapus?') ">
-                            <i class="fa fa-trash-o"></i></a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-                </tbody>
+                    <?php $no = 1;
+                    foreach($rows as $row) : 
+                    ?>
+            <tr>
+                <td><?= $no++ ?></td>
+                <td><?= $row->nama_user ?></td>
+                <td><?= $row->nama_kandidat ?></td>
+                <td><?= $row->created ?></td>
+                <td>
+                    <a href="<?= site_url('admin/suara/hapus/' . $row->id_suara); ?>" 
+                    class="btn btn-sm btn-danger" onclick="return confirm ('Yakin Hapus?') ">
+                    <i class="fa fa-trash-o"></i></a>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+         </tbody>
             </table>
         </div>
     </div>

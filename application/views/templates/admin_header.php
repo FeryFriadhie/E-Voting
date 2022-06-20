@@ -27,5 +27,4 @@
 <script src="<?= base_url('assets/'); ?>js/Chart.min.js"></script>
 <script src="<?= base_url('assets/'); ?>ckeditor/ckeditor.js"></script>
 </head>
-
 <body class="hold-transition skin-purple sidebar-mini">

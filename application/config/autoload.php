@@ -58,11 +58,11 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database', 'session');
+$autoload['libraries'] = array('database', 'session', 'form_validation',);
 
 /*
 | -------------------------------------------------------------------
-|  Auto-load Drivers
+|  Auto-load Driver
 | -------------------------------------------------------------------
 | These classes are located in system/libraries/ or in your
 | application/libraries/ directory, but are also placed inside their
