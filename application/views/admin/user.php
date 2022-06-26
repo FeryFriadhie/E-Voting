@@ -4,14 +4,26 @@
             <?= $this->session->flashdata('message'); ?> 
             <?php sleep(1); unset($_SESSION['message']);?>
             <a href="<?= site_url('admin/user/tambah'); ?>" 
-            class="btn bg-maroon"><i class="fa fa-plus-circle"></i> Tambah User</a>          
+            class="btn bg-maroon"><i class="fa fa-plus-circle"></i> Tambah User</a>
         </div>
         <!-- /.box-header -->
+        <div class="box-body">
+        <?= form_open_multipart('admin/user/uploaddata'); ?>
+            <div class="form-row">
+                <div class="col-md-3">
+                   <input type="file" class="form-control-file" id="importexcel" name="importexcel" accept=".xlsx, .xls">
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-warning"><i class="fa fa-plus-circle"></i> Import</button>
+                </div>
+            </div>
+        <?= form_close(); ?>
+        </div>
         <div class="box-body">
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th>No</th>
                         <th>Kelas</th>
                         <th>Nama</th>
                         <th>Email</th>

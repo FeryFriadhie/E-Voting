@@ -34,5 +34,12 @@ class UserModel extends CI_Model
         $this->db->where('id', $this->input->post('id'));
         $this->db->update('user', $data);
     }
+
+    public function import_data($datauser) 
+    {
+        $jumlah = count($datauser);
+        if ($jumlah > 0) {
+         $this->db->replace('user', $datauser);
+        }
+    }
 }
-?>
