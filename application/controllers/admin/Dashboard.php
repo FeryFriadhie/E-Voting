@@ -22,5 +22,15 @@ class Dashboard extends CI_Controller
         $this->load->view('admin/dashboard', $data);
         $this->load->view('templates/admin_footer');
     }
+
+    public function detail_suara()
+    {
+        $data['title'] = ' Admin E-Voting | Detail Suara';
+        $data['total_suara'] = $this->db->get('suara')->num_rows();
+        $data['kandidat1osis'] = $this->db->get_where('suara',  ['nama_kandidat' => 'Calon No.1 OSIS'])->num_rows();
+        $data['kandidat2osis'] = $this->db->get_where('suara',  ['nama_kandidat' => 'Calon No.2 OSIS'])->num_rows();
+        $data['kandidat3osis'] = $this->db->get_where('suara',  ['nama_kandidat' => 'Calon No.3 OSIS'])->num_rows();
+        $this->load->view('admin/detail_suara', $data);
+    }
 }
 ?>

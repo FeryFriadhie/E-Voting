@@ -37,6 +37,12 @@
           </div>
         </div>
       </div>
+      <div class="box">
+        <div class="box-header">
+            <?= $this->session->flashdata('message'); ?> 
+            <?php sleep(1); unset($_SESSION['message']); ?>
+            <a class="btn btn-danger" href="<?= base_url('admin/dashboard/detail_suara'); ?>"> Detail</a>
+        </div>
     <canvas id="chartHasilPerolehanSuara" height="100"></canvas>
 </section>
 

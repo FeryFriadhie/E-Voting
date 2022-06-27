@@ -39,51 +39,9 @@ class Suara extends CI_Controller
 
     public function print()
     {
-        $data['title'] = 'Print Suara';
+        $data['title'] = ' Admin E-Voting | Print Suara';
         $data['rows'] = $this->SuaraModel->getSuara()->result();
         $this->load->view('admin/print_suara', $data);
     }
-
-    // public function excel()
-    // {
-    //     $data['title'] = 'Export Excel';
-    //     $data['rows'] = $this->SuaraModel->getSuara()->result();
-    //     $this->load->view('admin/suara', $data);
-    //     require(APPPATH. 'PHPExcel-1.8/Classes/PHPExcel.php');
-    //     require(APPPATH. 'PHPExcel-1.8/Classes/PHPExcel/Writer/Excel2007.php');
-
-    //     $object =  new PHPExcel();
-    //     $object->getProperties()->setCreator("Tim E-Voting");
-    //     $object->getProperties()->setLastModifiedBy("Tim E-Voting");
-    //     $object->getProperties()->setTitle("Hasil Rekapitulasi Suara");
-    //     $object->setActiveSheetIndex(0);
-    //     $object->getActiveSheet()->setCellValue('A1', 'NO');
-    //     $object->getActiveSheet()->setCellValue('B1', 'NAMA USER');
-    //     $object->getActiveSheet()->setCellValue('C1', 'NAMA KANDIDAT');
-    //     $object->getActiveSheet()->setCellValue('D1', 'CREATED');
-
-    //     $baris = 2;
-    //     $no = 1;
-
-    //     foreach ($data['rows'] as $row) {
-    //         $object->getActiveSheet()->setCellValue('A'.$baris, $no++);
-    //         $object->getActiveSheet()->setCellValue('B'.$baris, $row->nama_user);
-    //         $object->getActiveSheet()->setCellValue('C'.$baris, $row->nama_kandidat);
-    //         $object->getActiveSheet()->setCellValue('D'.$baris, $row->created);
-
-    //         $baris++;
-    //     }
-
-    //     $filename="Hasil_Rekapitulasi_Suara" .'.xlsx';
-    //     $object->getActiveSheet()->setTitle("Hasil Rekapitulasi Suara");
-    //     header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    //     header('Content-Disposition: attachment;filename="'.$filename.'"');
-    //     header('Cache-Control: max-age=0');
-
-    //     $writer=PHPExcel_IOFactory::createwriter($object, 'Excel2007');
-    //     $writer->save('php://output');
-    //     exit;
-
-    // }
 }
 ?>

@@ -14,7 +14,7 @@
                    <input type="file" class="form-control-file" id="importexcel" name="importexcel" accept=".xlsx, .xls">
                 </div>
                 <div class="col">
-                    <button type="submit" class="btn btn-warning"><i class="fa fa-plus-circle"></i> Import</button>
+                    <button type="submit" class="btn btn-warning"><i class="fa fa-plus-circle"></i> Import User</button>
                 </div>
             </div>
         <?= form_close(); ?>

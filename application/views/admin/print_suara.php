@@ -26,7 +26,7 @@
     <hr class="line-title">
     </div> -->
     <div class="col-md-12 mt-3">
-        <h3 align="center" class="text-secondary"> Para Pemilih Calon</h3>
+        <h3 align="center" class="text-secondary"> User Pemilih Calon</h3>
     </div>
     <div class="box-body col-md-12">
         <table id="example1" class="table table-bordered table-striped">
@@ -34,7 +34,7 @@
                 <tr>
                     <th>No</th>
                     <th>Nama User</th>
-                    <th>Nama Kandidat</th>
+                    <th>Memilih</th>
                     <th>Created</th>
                 </tr>
             </thead>

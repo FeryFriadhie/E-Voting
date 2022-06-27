@@ -4,8 +4,7 @@
             <h3 class="box-title"><?= $title ?></h3>
             <?= $this->session->flashdata('message'); ?> 
             <?php sleep(1); unset($_SESSION['message']); ?>
-            <a class="btn-sm btn-danger" href="<?= base_url('admin/suara/print'); ?>"><i class="fa fa-print"> Print</i></a>
-            <!-- <a class="btn-sm btn-success" href="<?= base_url('admin/suara/excel'); ?>"><i class="fa fa-download"> Excel</i></a>    -->
+            <a class="btn btn-danger" href="<?= base_url('admin/suara/print'); ?>"><i class="fa fa-print"> Print</i></a>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
@@ -14,7 +13,7 @@
                     <tr>
                         <th>NO</th>
                         <th>Nama User</th>
-                        <th>Nama Kandidat</th>
+                        <th>Memilih</th>
                         <th>Created</th>
                         <th>Aksi</th>
                     </tr>
