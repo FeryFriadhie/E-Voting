@@ -39,9 +39,16 @@ class Suara extends CI_Controller
 
     public function print()
     {
-        $data['title'] = ' Admin E-Voting | Print Suara';
+        $data['title'] = 'Admin E-Voting | Print Suara';
         $data['rows'] = $this->SuaraModel->getSuara()->result();
         $this->load->view('admin/print_suara', $data);
+    }
+
+    public function excel()
+    {
+        $data['title'] = 'Admin E-Voting | Export Excel';
+        $data['rows'] = $this->SuaraModel->getSuara()->result();
+        $this->load->view('admin/suara_excel', $data);
     }
 }
 ?>

@@ -5,6 +5,7 @@
             <?= $this->session->flashdata('message'); ?> 
             <?php sleep(1); unset($_SESSION['message']); ?>
             <a class="btn btn-danger" href="<?= base_url('admin/suara/print'); ?>"><i class="fa fa-print"> Print</i></a>
+            <a class="btn btn-success" href="<?= base_url('admin/suara/excel'); ?>"><i class="fa fa-download"> Export Excel</i></a>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
@@ -12,7 +13,7 @@
                 <thead>
                     <tr>
                         <th>NO</th>
-                        <th>Nama User</th>
+                        <th>Nama</th>
                         <th>Memilih</th>
                         <th>Created</th>
                         <th>Aksi</th>
