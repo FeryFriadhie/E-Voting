@@ -15,6 +15,7 @@ class Suara extends CI_Controller
     {
         $data['title'] = 'Suara';
         $data['rows'] = $this->SuaraModel->getSuara()->result();
+        // $data['rows'] = $this->SuaraModel->hapusbanyak();
         $this->load->view('templates/admin_header', $data);
         $this->load->view('templates/admin_topbar');
         $this->load->view('templates/admin_sidebar');
@@ -49,6 +50,25 @@ class Suara extends CI_Controller
         $data['title'] = 'Admin E-Voting | Export Excel';
         $data['rows'] = $this->SuaraModel->getSuara()->result();
         $this->load->view('admin/suara_excel', $data);
+    }
+// Delete Suara Menggunakan Checkbox but belum fungsi 
+    public function deletemultiple()
+    {
+        if($this->input->is_ajax_request() == true) {
+            $id_suara = $this->input->post('id_suara', true);
+            $jmldata = count((array)$id_suara);
+            $hapusdata['rows'] = $this->SuaraModel->getSuara()->result();
+            $hapusdata['rows'] = $this->SuaraModel->hapusbanyak($id_suara, $jmldata);
+
+            if($hapusdata == true) {
+                $message = [
+                    'sukses' => "$jmldata data suara berhasil dihapus"
+                ];
+            }
+            echo json_encode($message);
+        } else {
+            exit('Maaf tidak bisa dilanjutkan');
+        }
     }
 }
 ?>
